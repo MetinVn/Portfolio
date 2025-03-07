@@ -69,7 +69,7 @@ export default function Portfolio() {
   if (error) return <div className="text-whiteF p-6">Error fetching pinned repositories</div>;
 
   return (
-    <Container bottomLeftCorner={true} bottomLeftWidth={100} padding="p-10">
+    <Container bottomLeftCorner={true} padding="p-10">
       <div className="flex flex-col items-start space-y-4">
         <ul className="mb-5 list-disc text-lg text-accentGray">
           <li>Portfolio</li>
