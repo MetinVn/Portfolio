@@ -1,54 +1,94 @@
-# React + TypeScript + Vite
+# Portfolio – React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio web application built with React, TypeScript, and Vite. This project showcases a developer's skills, projects, and contact information with a clean, animated UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Navigation](#navigation)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+## Features
+
+- Responsive design for desktop and mobile
+- Animated UI with Tailwind CSS
+- Context-based layout switching (About, Portfolio, Contact)
+- Modular, reusable components and layouts
+
+---
+
+## Project Structure
+
+```
+src/
+  components/         # Main UI components (About, Contact, Footer, Header, Hero, Portfolio)
+  contexts/           # React context for layout switching
+  images/             # Static images used in the UI
+  layouts/            # Layout components (Container, AboutDesktop, AboutMobile, HeaderDesktop, HeaderMobile, Jobindicator)
+  svg/                # SVG icon components
+  types/              # TypeScript type definitions
+  App.tsx             # Main app component
+  main.tsx            # Entry point
+  index.css           # Tailwind CSS imports
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **components/**: Page-level and shared UI components.
+- **contexts/**: Contains `selected_layout.tsx` for managing which layout/page is active.
+- **layouts/**: Layout wrappers and responsive variants.
+- **images/**: All static images and mockups.
+- **svg/**: SVG icon React components.
+- **types/**: TypeScript interfaces for props and data models.
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+## Technologies Used
+
+- **React** – UI library
+- **TypeScript** – Static typing
+- **Tailwind CSS** – Utility-first CSS framework
+- **@tanstack/react-query** – Data fetching and caching
+- **Axios** – HTTP client
+- **React Icons** – Icon library
+
+---
+
+## Getting Started
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/MetinVn/Portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+4. **Open [http://localhost:5173](http://localhost:5173) in your browser.**
+
+---
+
+## Navigation
+
+The app uses a context-based navigation system. The main sections are:
+
+- **About**: Introduction, skills, and contact actions
+- **Portfolio**: List of projects
+- **Contact**: Contact information and email link
+
+Navigation is available via the header (desktop and mobile variants).
